@@ -78,6 +78,17 @@ optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 
 [[package]]
+name = "discord"
+version = "1.7.3"
+description = "A mirror package for discord.py. Please install that instead."
+category = "main"
+optional = false
+python-versions = "*"
+
+[package.dependencies]
+"discord.py" = ">=1.7.3"
+
+[[package]]
 name = "discord-custom-help"
 version = "0.0.6"
 description = "A help cog for discord bots"
@@ -238,7 +249,7 @@ youtube-dl-backend = ["youtube-dl"]
 
 [[package]]
 name = "py-cord"
-version = "2.0.0a4364+g644054ff"
+version = "2.0.0a4509+g8a7b57bb"
 description = "A Python wrapper for the Discord API"
 category = "main"
 optional = false
@@ -249,15 +260,15 @@ develop = false
 aiohttp = ">=3.6.0,<3.9.0"
 
 [package.extras]
-docs = ["sphinx (==4.2.0)", "sphinxcontrib-trio (==1.1.2)", "sphinxcontrib-websupport"]
-speed = ["orjson (>=3.5.4)"]
+docs = ["sphinx (==4.3.1)", "sphinxcontrib-trio (==1.1.2)", "sphinxcontrib-websupport"]
+speed = ["orjson (>=3.5.4)", "aiodns (>=1.1)", "brotlipy", "cchardet"]
 voice = ["PyNaCl (>=1.3.0,<1.5)"]
 
 [package.source]
 type = "git"
 url = "https://github.com/Pycord-Development/pycord"
 reference = "master"
-resolved_reference = "644054fff4d8221d4b577e2c8ab31f24a5dfbdeb"
+resolved_reference = "8a7b57bb337b8933ec487ca9981076101b5f99f5"
 
 [[package]]
 name = "pycord"
@@ -361,7 +372,7 @@ python-versions = "*"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.8"
-content-hash = "3486f5d27893efd448099a8302f9506070cb30a305484d79318466db97461330"
+content-hash = "780237ac1aa4319e5c65f067d00d5efc8b094067907fd4f5f5a869cd1f96004c"
 
 [metadata.files]
 aiohttp = [
@@ -474,6 +485,10 @@ click = [
 colorama = [
     {file = "colorama-0.4.4-py2.py3-none-any.whl", hash = "sha256:9f47eda37229f68eee03b24b9748937c7dc3868f906e8ba69fbcbdd3bc5dc3e2"},
     {file = "colorama-0.4.4.tar.gz", hash = "sha256:5941b2b48a20143d2267e95b1c2a7603ce057ee39fd88e7329b0c292aa16869b"},
+]
+discord = [
+    {file = "discord-1.7.3-py3-none-any.whl", hash = "sha256:248d728356e149c818a81b94659047a19305ea1623d4810bbb342f6b7df55f36"},
+    {file = "discord-1.7.3.tar.gz", hash = "sha256:846dd3d66888c2e0a8bd9120d8778a0fe088c003a7f6451668497f14e322a304"},
 ]
 discord-custom-help = [
     {file = "discord-custom-help-0.0.6.tar.gz", hash = "sha256:741e2f58f2ce79939751e13f54736a62136054d55fa5f41f71c71d1b7a1688be"},

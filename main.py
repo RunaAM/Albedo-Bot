@@ -42,9 +42,6 @@ async def on_message(message):
 			elif(rand ==5):
 				await message.channel.send('Yes')
 	await client.process_commands(message)
-@client.command()
-async def vali(ctx):
-	await ctx.send("Salut eu merg la shaormerie sa mananc o shaorma cu de toate")
 
 @client.slash_command(guild_ids=[860869454878736384],name='ping',description="pinging")
 async def newping(ctx):
