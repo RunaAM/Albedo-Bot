@@ -49,7 +49,7 @@ async def newping(ctx):
 	embed.add_field(name='Ping',value=f' {round(client.latency * 1000)}ms',inline=True)
 	embed.set_author(name='Albedo')
 	embed.timestamp = datetime.utcnow()
-	await ctx.send( embed=embed)
+	await ctx.respond( embed=embed)
 @client.event
 async def on_ready():
 	change_status.start()
