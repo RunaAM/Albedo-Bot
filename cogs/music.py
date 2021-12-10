@@ -34,7 +34,7 @@ class Player(commands.Cog):
 	@commands.command()
 	async def join(self,ctx):
 		if ctx.author.voice is None:
-			return await ctx.send("You wanna listen to music but you are not in the voice channel, interesting.. ")
+			return await ctx.send("You wanna listen to music but you are not in the voice channel, interesting... ")
 		
 		if ctx.voice_client is not None:
 			await ctx.author.voice.channel.disconnect()
