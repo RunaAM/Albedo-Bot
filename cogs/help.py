@@ -3,13 +3,14 @@ from discord.ext import commands
 from datetime import datetime
 import json
 import random
+from discord.commands import Option
 
 class Help(commands.Cog):
 	def __init__(self, client):
 		self.client = client
 	@commands.slash_command(guild_ids=[860869454878736384], name="help",description="Help is on the way")
-	async def help(self,ctx,type=None):
-		if type == " ":
+	async def help(self,ctx,type=Option(str, "Enter help page", required = 	True, default = 'help')):
+		if type == "help":
 			embed=discord.Embed(title="Help menu", description="principal menu", color=0xcc30cf)
 			embed.set_author(name="Albedo's rules")
 			embed.add_field(name="music player", value="a!help music", inline=True)
