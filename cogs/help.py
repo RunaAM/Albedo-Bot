@@ -7,16 +7,16 @@ import random
 class Help(commands.Cog):
 	def __init__(self, client):
 		self.client = client
-	@commands.command()
+	@commands.slash_command(guild_ids=[860869454878736384], name="help",description="Help is on the way")
 	async def help(self,ctx,type=None):
 		if type == None:
 			embed=discord.Embed(title="Help menu", description="principal menu", color=0xcc30cf)
-			embed.set_author(name="Albedo's 	rules")
+			embed.set_author(name="Albedo's rules")
 			embed.add_field(name="music player", value="a!help music", inline=True)
 			embed.add_field(name="wish simulator", value="a!help wish", inline=True)
 			embed.add_field(name="misc", value="a!help misc", inline=True)
 			embed.set_footer(text="Albedo-bot")
-			await ctx.send(embed=embed)
+			await ctx.respond(embed=embed)
 		elif type == 'music':
 			embed=discord.Embed(title="Help menu", description="Music player", color=0xcc30cf)
 			embed.set_author(name="Albedo's rules")
