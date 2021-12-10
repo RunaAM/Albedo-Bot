@@ -9,7 +9,7 @@ class Help(commands.Cog):
 		self.client = client
 	@commands.slash_command(guild_ids=[860869454878736384], name="help",description="Help is on the way")
 	async def help(self,ctx,type=None):
-		if type == None:
+		if type == " ":
 			embed=discord.Embed(title="Help menu", description="principal menu", color=0xcc30cf)
 			embed.set_author(name="Albedo's rules")
 			embed.add_field(name="music player", value="a!help music", inline=True)
@@ -30,13 +30,13 @@ class Help(commands.Cog):
 			embed.add_field(name="a!leave", value="the bot leaves the voice channel", inline=True)
 			
 			embed.set_footer(text="Albedo-bot")
-			await ctx.send(embed=embed)
+			await ctx.respond(embed=embed)
 		elif type == 'wish':
 			embed=discord.Embed(title="Help menu", description="Wish simulator", color=0xcc30cf)
 			embed.set_author(name="Albedo's rules")
 			embed.add_field(name="a!pull", value="Uses the genshin like gacha system WITHOUT PITY", inline=True)
 			embed.set_footer(text="Albedo-bot")
-			await ctx.send(embed=embed)
+			await ctx.respond(embed=embed)
 		elif type == 'misc':
 			embed=discord.Embed(title="Help menu", description="Misc", color=0xcc30cf)
 			embed.set_author(name="Albedo's rules")
@@ -47,6 +47,6 @@ class Help(commands.Cog):
 			embed.add_field(name="/cimpoi", value=" iuiuiuiu", inline=True)
 			embed.add_field(name="/chinese", value=" best song ever", inline=True)
 			embed.set_footer(text="Albedo-bot")
-			await ctx.send(embed=embed)
+			await ctx.respond(embed=embed)
 def setup(client):
 	client.add_cog(Help(client))
