@@ -5,6 +5,7 @@ from datetime import datetime
 from keep_alive import keep_alive
 import random
 import os
+import json
 os.system("pip install -U git+https://github.com/Pycord-Development/pycord")
 intents = discord.Intents(messages=True,guilds = True,reactions=True,members=True,presences = True)
 
@@ -29,6 +30,12 @@ async def on_command_error(ctx,error):
 @client.event
 async def on_message(message):
 	if message.author.bot == False:
+		with open("data/users.json", "w") as f:
+			users = json.load(f)
+			if(message.author.id not in users):
+				users[message.author.id] = {}
+			json.dump(users,f)
+			f.close()				 	
 		if(message.content.startswith('Albedo,')):
 			rand = random.randint(1,5)
 			if(rand ==1):
