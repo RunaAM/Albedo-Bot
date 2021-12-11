@@ -58,7 +58,7 @@ async def add_experience(users, user):
         users[f'{user.id}']['experience'] = 0
         users[f'{user.id}']['level'] = 0
   users[f'{user.id}']['experience'] += 6
-  print(f"{users[f'{user.id}']['level']}")
+  
  
 async def level_up(users, user, message):
   experience = users[f'{user.id}']["experience"]
@@ -68,14 +68,6 @@ async def level_up(users, user, message):
     await message.channel.send(f':tada: {user.mention} has reached level {lvl_end}. Congrats! :tada:')
     users[f'{user.id}']["level"] = lvl_end
  
-@client.command()
-async def rank(ctx, member: discord.Member = None):
-  if member == None:
-    userlvl = users[f'{ctx.author.id}']['level']
-    await ctx.send(f'{ctx.author.mention} You are at level {userlvl}!')
-  else:
-    userlvl2 = users[f'{member.id}']['level']
-    await ctx.send(f'{member.mention} is at level {userlvl2}!')
 @client.slash_command(guild_ids=[860869454878736384],name='ping',description="pinging")
 async def newping(ctx):
 	embed = discord.Embed(colour=discord.Color.green())
