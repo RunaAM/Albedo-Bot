@@ -31,19 +31,14 @@ async def on_command_error(ctx,error):
 @client.event
 async def on_message(message):
 	if message.author.bot == False:
-		with open('users.json', 'r') as f:
+		with open('data/users.json', 'r') as f:
 			users = json.load(f)
 		await add_experience(users, message.author)
 		await level_up(users, message.author, message)
-		with open('users.json', 'w') as f:
+		with open('data/users.json', 'w') as f:
 			json.dump(users, f)
 			await client.process_commands(message)
-		with open("data/users.json", "w") as f:
-			users = json.loads(f)
-			if(message.author.id not in users):
-				users[message.author.id] = {}
-			json.dump(users,f)
-			f.close()				 	
+					 	
 		if(message.content.startswith('Albedo,')):
 			rand = random.randint(1,5)
 			if(rand ==1):
