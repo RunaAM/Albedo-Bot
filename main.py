@@ -17,7 +17,7 @@ icon = " "
 
 client = commands.Bot(command_prefix = "a!",intents = discord.Intents.all())
 client.remove_command('help')
-with open('users.json', 'r') as f:
+with open('data/users.json', 'r') as f:
   users = json.load(f)
 players = {}
 @tasks.loop(seconds=10)
