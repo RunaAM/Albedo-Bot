@@ -39,7 +39,7 @@ class Player(commands.Cog):
 		if ctx.voice_client is not None:
 			await ctx.author.voice.channel.disconnect()
 		await ctx.author.voice.channel.connect()
-		self.song_queue[860869454878736384] =[]
+		self.song_queue[860869454878736384,881207955029110855] =[]
 	
 	@commands.command()
 	async def leave(self,ctx):

@@ -28,7 +28,7 @@ fiveeventicon=["https://img.game8.co/3294977/da7d112f0f9c44f8d123cc533a3317a8.pn
 class wish(commands.Cog):
 	def __init__(self, client):
 		self.client = client
-	@commands.command()
+	@commands.slash_command(guild_ids = [860869454878736384,881207955029110855],name = "pull",description = " wishing simulator")
 	async def pull(self,ctx):
 		pulled_name=["none"]
 		pulled_id=[0]
@@ -111,11 +111,11 @@ class wish(commands.Cog):
 		#	a+=1
 		
 		if(color ==1):
-			await ctx.send(file=discord.File(f'/home/runner/Albedo-remake/media/wish.mov'))
+			await ctx.respond(file=discord.File(f'/home/runner/Albedo-Bot/media/wish.mov'))
 
 		else:
-			await ctx.send(file=discord.File(f'/home/runner/Albedo-remake/media/w1sh.mov'))
+			await ctx.respond(file=discord.File(f'/home/runner/Albedo-Bot/media/w1sh.mov'))
 		time.sleep(10)
-		await ctx.send( embed=embed)	
+		await ctx.respond( embed=embed)	
 def setup(client):
 	client.add_cog(wish(client))
