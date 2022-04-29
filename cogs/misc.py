@@ -1,34 +1,31 @@
 import discord
 from discord.ext import commands
 from datetime import datetime
-import json
-import random
+
 
 class Meme(commands.Cog):
+	guilds_id=[860869454878736384,968887343119482940]
 	def __init__(self, client):
 		self.client = client
-	@commands.slash_command(guild_ids=[860869454878736384,881207955029110855], name="ale",description="This is for you alec")
-	async def ale(self,ctx):
-		await ctx.respond("<:emoji_1:871794698887499776> This aint build a bitch u dont get to pick and choose.")
-	@commands.slash_command(guild_ids=[860869454878736384,881207955029110855], name="runa",description="runa runa runa runa")
+
+	@commands.slash_command( name="nsfw",description="ok")
+	async def nsfw(self,ctx):
+		await ctx.respond("I see a lot of... questionable stuff here")
+	@commands.slash_command( name="dicc",description="ok")
+	async def dicc(self,ctx):
+		await ctx.respond("A lot of dicks here, i dont wanna know what are yall into")
+
+	@commands.slash_command( name="runa",description="runa runa runa runa")
 	async def andrei(self,ctx):
 		await ctx.respond("<:emoji_1:871794698887499776>")
-		await ctx.respond("smack my ass like a drum slurp that dick till it cums ")
 
-	@commands.slash_command(guild_ids=[860869454878736384,881207955029110855], name="cimpoi",description="iu iu iu iu iu")
-	async def cimpoi(self,ctx):
-		await ctx.respond("IU IU IU IU IU VINE BADE PE LA NOI SA NU VII FARA CIMPOI DA MA CIMPOI DA MA CIMPOI JOACA FETELE A NOI")
-	@commands.slash_command(guild_ids=[860869454878736384,881207955029110855], name="chinese",description="i love this")
-	async def chinese(self,ctx):
-		await ctx.respond("https://www.youtube.com/watch?v=4L-fSsY01TU")
-	@commands.slash_command(guild_ids=[860869454878736384,881207955029110855], name="pride",description="BEE WHO YOU ARE")
+
+	@commands.slash_command( name="pride",description="BEE WHO YOU ARE")
 	async def pride(self,ctx):
 		embed = discord.Embed(title='I,Albedo the chief alchemist, have to say "happy pride month!!"',
                           colour=discord.Color.orange())
 		embed.set_author(
-        name='Albedo',
-        icon_url=
-        'https://cdn.discordapp.com/attachments/846783543694721087/846783570915098624/gasp.png'
+        name='Albedo'
     )
 		
 		embed.set_image(

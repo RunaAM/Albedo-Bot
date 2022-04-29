@@ -1,5 +1,4 @@
 import discord
-import asyncio
 import youtube_dl
 import pafy
 from discord.ext import commands
@@ -39,7 +38,7 @@ class Player(commands.Cog):
 		if ctx.voice_client is not None:
 			await ctx.author.voice.channel.disconnect()
 		await ctx.author.voice.channel.connect()
-		self.song_queue[860869454878736384,881207955029110855] =[]
+		self.song_queue[860869454878736384,968887343119482940] =[]
 	
 	@commands.command()
 	async def leave(self,ctx):

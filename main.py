@@ -5,14 +5,13 @@ from itertools import cycle
 from datetime import datetime
 from keep_alive import keep_alive
 import random
-import os
 import json
 os.system("pip install -U git+https://github.com/Pycord-Development/pycord")
 intents = discord.Intents(messages=True,guilds = True,reactions=True,members=True,presences = True)
 
 
-
-status = cycle(['Made by runa#4525','a! is the prefix'])
+guilds_id=[860869454878736384,968887343119482940]
+status = cycle(['Made by runa#3672','a! will no longer be used'])
 
 icon = " "
 
@@ -69,7 +68,7 @@ async def level_up(users, user, message):
     await message.channel.send(f':tada: {user.mention} has reached level {lvl_end}. Congrats! :tada:')
     users[f'{user.id}']["level"] = lvl_end
  
-@client.slash_command(guild_ids=[860869454878736384,881207955029110855],name='ping',description="pinging")
+@client.slash_command(guild_ids=guilds_id,name='ping',description="pinging")
 async def newping(ctx):
 	embed = discord.Embed(colour=discord.Color.green())
 	embed.add_field(name='Ping',value=f' {round(client.latency * 1000)}ms',inline=True)
@@ -81,16 +80,7 @@ async def on_ready():
 	change_status.start()
 	print("Albedo is ready")
 
-@client.slash_command(guild_ids=[860869454878736384,881207955029110855])
-async def hello(
-    ctx: discord.ApplicationContext,
-    name: Option(str, "Enter your name"),
-    age: Option(int, "Enter your age", min_value=1, max_value=99, default=18)
-    # passing the default value makes an argument optional
-    # you also can create optional argument using:
-    # age: Option(int, "Enter your age") = 18
-):
-    await ctx.respond(f"Hello! Your name is {name} and you are {age} years old.")
+
 @client.command()
 async def load(ctx, extension):
 	client.load_extension(f'cogs.{extension}')

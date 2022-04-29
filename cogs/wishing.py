@@ -1,7 +1,6 @@
 import discord
 from discord.ext import commands
 from datetime import datetime
-import json
 import random
 import time
 weaponstandard=["Cool Steel","Dark Iron Sword","Fillet Blade","Harbinger of Dawn","Skyrider Sword","Traveler's Handy Sword","Bloodtainted Greatsword","Debate Club","Ferrous Shadow","Skyrider Greatsword","White Iron Greatsword","Black Tassel","Halberd","White Tassel","Messenger","Raven Bow","Recurve Bow","Sharpshooter's Oath","Slingshot","Emerald Orb","Magic Guide","Otherworldly Story","Thrilling Tales of Dragon Slayers","Twin Nephrite"]
@@ -26,9 +25,10 @@ foureicon=['https://img.game8.co/3401060/f6cef4da3d573ae064d253cf8bee1448.png/sh
 fiveevent=["venti","klee","zhongli","childe","albedo","ganyu","xiao","keqing","hutao","venti","childe","zhongli","eula","klee","kazuha","ayaka","yoimiya"]
 fiveeventicon=["https://img.game8.co/3294977/da7d112f0f9c44f8d123cc533a3317a8.png/show","https://img.game8.co/3294978/e0194d396700c3add4ec1b95ddce41f0.png/show","https://img.game8.co/3300497/33da5700d1749ceecbea9369809c706d.png/show","https://img.game8.co/3295009/47a42db3c2736ef309028ccbd3cfb5cf.png/show","https://img.game8.co/3310758/429ff8386dab8be2f4b1de43ac783f19.png/show","https://img.game8.co/3317298/8a6ff657aae195d782276029ad880c34.png/show","https://img.game8.co/3294989/397b1e9b2effcd2ec2dabbbc1ff6a068.png/show","https://img.game8.co/3294997/b30e3834cd4ed13eb7c48dbca7d1d2f1.png/show","https://img.game8.co/3332448/6a22c735ab5ab9db5cd251ecbf4ab2a4.png/show","https://img.game8.co/3294977/da7d112f0f9c44f8d123cc533a3317a8.png/show","https://img.game8.co/3295009/47a42db3c2736ef309028ccbd3cfb5cf.png/show","https://img.game8.co/3300497/33da5700d1749ceecbea9369809c706d.png/show","https://img.game8.co/3357399/0681a143deeb28601cffa5fee727dd3d.png/show","https://img.game8.co/3294978/e0194d396700c3add4ec1b95ddce41f0.png/show","https://img.game8.co/3378026/242362114b92f3e00ee1d72355e6870f.png/show","https://img.game8.co/3313080/2cae7dd671c21d14eff9fdd945e07da2.png/show","https://img.game8.co/3400792/b31e528518dfa732ab0f3e184ac364d3.png/show"]
 class wish(commands.Cog):
+	guilds_id=[860869454878736384,968887343119482940]
 	def __init__(self, client):
 		self.client = client
-	@commands.slash_command(guild_ids = [860869454878736384,881207955029110855],name = "pull",description = " wishing simulator")
+	@commands.slash_command(name = "pull",description = " wishing simulator")
 	async def pull(self,ctx):
 		pulled_name=["none"]
 		pulled_id=[0]
@@ -99,8 +99,7 @@ class wish(commands.Cog):
 			embed.set_thumbnail(url=thumb)
 		embed.set_author(name='Albedo')
 		embed.timestamp = datetime.utcnow()
-		a=0
-		
+
 		#for x in range(1,len(pulled_id)):
 		#	if(x >3):
 				#with open('data/users.json', 'r') as f:
