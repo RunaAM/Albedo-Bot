@@ -1,15 +1,14 @@
 import discord
 from discord.ext import commands
 
-from discord.commands import Option
-
+#from discord.commands import Option
+#=Option(str, "Enter help page", default = "help")
 class Help(commands.Cog):
-	guilds_id=[860869454878736384,968887343119482940]
 	def __init__(self, client):
 		self.client = client
-	@commands.slash_command(guild_ids=guilds_id, name="help",description="Help is on the way")
-	async def help(self,ctx,type=Option(str, "Enter help page", required = 	True, default = 'help')):
-		if type == "help":
+	@commands.slash_command(name="help",description="type all in page")
+	async def help(self,ctx,page):
+		if type == "all":
 			embed=discord.Embed(title="Help menu", description="principal menu", color=0xcc30cf)
 			embed.set_author(name="Albedo's rules")
 			embed.add_field(name="music player", value="/help music", inline=True)

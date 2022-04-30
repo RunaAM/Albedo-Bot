@@ -11,9 +11,7 @@ class Meme(commands.Cog):
 	@commands.slash_command( name="nsfw",description="ok")
 	async def nsfw(self,ctx):
 		await ctx.respond("I see a lot of... questionable stuff here")
-	@commands.slash_command( name="dicc",description="ok")
-	async def dicc(self,ctx):
-		await ctx.respond("A lot of dicks here, i dont wanna know what are yall into")
+
 
 	@commands.slash_command( name="runa",description="runa runa runa runa")
 	async def andrei(self,ctx):

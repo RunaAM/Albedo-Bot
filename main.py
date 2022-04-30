@@ -1,16 +1,13 @@
 import discord, os
-from discord import Option
 from discord.ext import commands, tasks
 from itertools import cycle
 from datetime import datetime
 from keep_alive import keep_alive
-import random
 import json
 os.system("pip install -U git+https://github.com/Pycord-Development/pycord")
 intents = discord.Intents(messages=True,guilds = True,reactions=True,members=True,presences = True)
 
 
-guilds_id=[860869454878736384,968887343119482940]
 status = cycle(['Made by runa#3672','a! will no longer be used'])
 
 icon = " "
@@ -39,18 +36,7 @@ async def on_message(message):
 			json.dump(users, f)
 			await client.process_commands(message)
 					 	
-		if(message.content.startswith('Albedo,')):
-			rand = random.randint(1,5)
-			if(rand ==1):
-				await message.channel.send('Of course')
-			elif(rand ==2):
-				await message.channel.send('Indeed')
-			elif(rand ==3):
-				await message.channel.send('No')
-			elif(rand ==4):
-				await message.channel.send('What are you trying to prove')
-			elif(rand ==5):
-				await message.channel.send('Yes')
+
 	await client.process_commands(message)
 async def add_experience(users, user):
   if not f'{user.id}' in users:
@@ -68,7 +54,7 @@ async def level_up(users, user, message):
     await message.channel.send(f':tada: {user.mention} has reached level {lvl_end}. Congrats! :tada:')
     users[f'{user.id}']["level"] = lvl_end
  
-@client.slash_command(guild_ids=guilds_id,name='ping',description="pinging")
+@client.slash_command(name='ping',description="pinging")
 async def newping(ctx):
 	embed = discord.Embed(colour=discord.Color.green())
 	embed.add_field(name='Ping',value=f' {round(client.latency * 1000)}ms',inline=True)
